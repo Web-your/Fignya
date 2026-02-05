@@ -14,16 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextBrowser" name="view">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>30</y>
-      <width>541</width>
-      <height>421</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="address_draw">
     <property name="geometry">
      <rect>
@@ -35,6 +25,19 @@
     </property>
     <property name="text">
      <string>Антон Бобрисович</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>30</y>
+      <width>551</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Image</string>
     </property>
    </widget>
    <widget class="QWidget" name="">
