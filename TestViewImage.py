@@ -5,7 +5,6 @@ from io import BytesIO  # Этот класс поможет нам сделат
 import requests
 from PIL import Image
 
-
 def geocode(address):
     server_address = 'http://geocode-maps.yandex.ru/1.x/?'
     api_key = '8013b162-6b42-4997-9691-77b7074026e0'
@@ -61,12 +60,14 @@ toponym_longitude, toponym_lattitude, span = get_ll_span(toponym_to_find)
 
 delta = "0.005"
 apikey = "f3a0fe3a-b07e-4840-a1da-06f18b2ddf13"
+theme = "dark"
 
 # Собираем параметры для запроса к StaticMapsAPI:
 map_params = {
     "ll": ",".join([str(toponym_longitude), str(toponym_lattitude)]),
     "spn": ",".join([delta, delta]),
     "apikey": apikey,
+    "theme": theme,
 
 }
 
