@@ -114,11 +114,16 @@ class MapApplication(QMainWindow):
 
         if event.key() == Qt.Key.Key_Right:
             self.center_x += self.move_step_x * 2 ** (self.max_zoom - self.zoom)
-            print(self.center_x)
+            self.center_x %= 360
+            if self.center_x > 180:
+                self.center_x = -(self.center_x - 180)
+
 
         if event.key() == Qt.Key.Key_Left:
             self.center_x -= self.move_step_x * 2 ** (self.max_zoom - self.zoom)
-            print(self.center_x)
+            self.center_y %= 180
+            if self.center_y > 90:
+                self.center_y = -(self.center_y - 90)
 
         self.on_update()
 
@@ -129,12 +134,18 @@ class MapApplication(QMainWindow):
         if x_text:
             try:
                 self.center_x = float(x_text)
+                self.center_x %= 360
+                if self.center_x > 180:
+                    self.center_x = -(self.center_x - 180)
             except ValueError:
                 print("Координаты имеют формат float")
 
         if y_text:
             try:
-                self.center_x = float(y_text)
+                self.center_y = float(y_text)
+                self.center_y %= 180
+                if self.center_y > 90:
+                    self.center_y = -(self.center_y - 90)
             except ValueError:
                 print("Координаты имеют формат float")
 
